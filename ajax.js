@@ -35,22 +35,3 @@ form.addEventListener('submit', async (evt) => {
     }
 
 });
-
-
-/*
-// Put code of task D here
-"use strict";
-for (let i = 0; i < picArray.length; i++){
-    const mainElement = document.querySelector("main");
-    mainElement.innerHTML += 
-    `<article>
-        <header>
-            <h2>${picArray[i].title}</h2>
-        </header>
-        <figure>
-            <img src=${picArray[i].filename} alt="title">
-            <figcaption>${picArray[i].caption}</figcaption>
-        </figure>
-        <p>${picArray[i].description}</p>
-    </article>`;
-} */
