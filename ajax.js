@@ -1,37 +1,50 @@
 'use strict';
 
+// Async function for fetching shows from TVMaze API.
 const fetchShow = async (url) =>{
     const response = await fetch(url);
     return await response.json();
 };
 
+// Select elements from HTML.
 const form = document.querySelector('#search-form');
 const query = document.querySelector('#query');
 const target = document.querySelector('#target');
 
+// Get input value and fetch shows on submit
 form.addEventListener('submit', async (evt) => {
     evt.preventDefault();
     const url = form.action + '?q=' + query.value;
     const tvShows = await fetchShow(url);
     console.log(tvShows);
 
-    // tvShows[0].show.name
+    // Select the main element and empty it.
     const mainElement = document.querySelector('main');
     mainElement.innerHTML = "";
-    
-    for (let i = 0; i < tvShows.length; i++){
 
+    // Get each show.
+    tvShows.forEach(shows => {
+        // Check for NULL and assign show infos to variables.
+        const show = shows.show;
+        const name = (show.name !== null) ? show.name : "Title not available.";
+        const homePage = (show.officialSite !== null) ? show.officialSite : show.url;
+        const imageMed = (show.image !== null) ? show.image.medium : "images/image-err.png";
+        const summary =(show.summary !== null) ? show.summary : "No summary available.";
+        const genres = (show.genres !== null) && show.genres.length > 0 ? show.genres.join(" | ") 
+            : "No genre information available.";
+
+        // Insert HTML elements.
         mainElement.innerHTML +=
         `<article>
             <header>
-                <h2>${tvShows[i].show.name}</h2>
+                <h2>${name}</h2>
             </header>
             <figure>
-                <img src=${tvShows[i].show.image.medium} alt=${tvShows[i].show.name} 'image'>
-                <figcaption></figcaption>
+                <img src=${imageMed} alt=${name} ' cover image.'>
             </figure>
-            <p>${tvShows[i].show.summary}</p>
+            <p>Genres: ${genres}</p>
+            <p>Summary: ${summary}</p>
+            <p><a href=${homePage}>Official Site<a/></p>
         </article>`;
-    }
-
+    });
 });
