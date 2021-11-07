@@ -47,4 +47,25 @@ form.addEventListener('submit', async (evt) => {
             <p id="home-page" ><a href=${homePage}> Official Site </p>
         </article>`;
     });
+
+    // Hover effect for the show cover images.
+    const images = document.querySelectorAll("figure");
+    for(const image of images) {
+        image.addEventListener("mousemove", (e) => {
+            console.log("move");
+            const xAxis = (window.innerWidth / 2 - e.pageX)  / 30;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 70;
+            image.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        image.addEventListener("mouseenter", (e) => {
+            image.style.transition = "none";
+        })
+
+        image.addEventListener("mouseleave", e => {
+            image.style.transition = "all 0.5s ease";
+            image.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    }
+
 });

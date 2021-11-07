@@ -9,12 +9,14 @@
 
 body{
     margin: 0;
+
 }
 
 main{
     display: grid;
     grid-template-columns: auto auto auto;
     padding-top: 100px;
+
 }
 
 #main-article {
@@ -23,6 +25,8 @@ main{
     background-color: #1b1b47f5;
     border-radius: 10px;
     box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.76);
+    perspective: 1000px;
+
 }
 
 #search-form{
@@ -34,6 +38,7 @@ main{
     width: 100%;
     margin: auto;
     box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.76);
+    z-index: 10;
 
 }
 
