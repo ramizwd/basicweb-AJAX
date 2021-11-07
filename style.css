@@ -1,0 +1,106 @@
+@font-face {
+    font-family: main-font;
+    src: url(fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Medium.ttf);
+}
+@font-face {
+    font-family: header-font;
+    src: url(fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Bold.ttf);
+}
+
+body{
+    margin: 0;
+}
+
+main{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 100px;
+}
+
+#main-article {
+    margin: 25px;
+    padding: 20px;
+    background-color: #1b1b47f5;
+    border-radius: 10px;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.76);
+}
+
+#search-form{
+    text-align: center;
+    position: fixed;
+    overflow: hidden;
+    background-color: #1b1b47f5;
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.76);
+
+}
+
+#search-form button{
+    padding: 13px 13px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+#search-form input{
+    width: 50%;
+    padding: 13px;
+    font-size: 18px;
+    background-color: rgba(151, 151, 151, 0.658);
+    color: white;
+    border: none;
+}
+
+.show-info{
+    text-align: center;
+}
+
+header{
+    text-align: center;
+    color: #ddd;
+    font-family: header-font;
+    font-size: 1.3rem;
+}
+
+figure{
+    padding-right: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+p{
+    font-family: main-font;
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+#home-page a{
+    position: relative;
+    text-decoration: none;
+    background: #78d9ff;
+    padding: 5px;
+    color: #1b1b47
+}
+#home-page a:hover {
+    color: white;
+    background: black;
+}
+
+@media only screen and (max-width: 1200px){
+    main{
+        grid-template-columns: auto auto;
+    }
+    
+}
+
+@media only screen and (max-width: 650px){
+    main{
+        grid-template-columns: auto;
+    }
+    
+}

@@ -35,16 +35,16 @@ form.addEventListener('submit', async (evt) => {
 
         // Insert HTML elements.
         mainElement.innerHTML +=
-        `<article>
+        `<article id="main-article">
             <header>
                 <h2>${name}</h2>
             </header>
             <figure>
                 <img src=${imageMed} alt=${name} ' cover image.'>
             </figure>
-            <p>Genres: ${genres}</p>
-            <p>Summary: ${summary}</p>
-            <p><a href=${homePage}>Official Site<a/></p>
+            <p class="show-info" >Genres: ${genres}</p>
+            <p class="show-info" >Summary: ${summary}</p>
+            <p id="home-page" ><a href=${homePage}> Official Site </p>
         </article>`;
     });
 });
